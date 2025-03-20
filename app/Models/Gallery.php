@@ -10,7 +10,7 @@ class Gallery extends Model
 
     protected $fillable = ['gallery'];
 
-    protected $cast = [
+    protected $casts = [
         'gallery' => 'array'
     ];
 

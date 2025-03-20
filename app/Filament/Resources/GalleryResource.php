@@ -26,10 +26,16 @@ class GalleryResource extends Resource
             ->schema([
 
                 FileUpload::make('gallery')
-                    ->image()
                     ->disk('public')
-                    ->multiple()
+                    ->directory('gallery')
+                    ->label('Gallery')
+                    ->image()
+                    ->reorderable(fn($record) => !!$record)
                     ->columnSpanFull()
+                    ->panelLayout('grid')
+                    ->appendFiles()
+                    ->multiple()
+                    ->columnSpanFull(),
             ]);
     }
 
